@@ -78,6 +78,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <!-- Deploy to Nexus -->
    <distributionManagement>
     <repository>
@@ -86,8 +87,17 @@
     <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
+    <!-- Déclaration du plugin Maven maven-deploy-plugin pour gérer le déploiement vers Nexus -->
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <!-- Déclaration du plugin Spring Boot pour la configuration de l'application -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -102,5 +112,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
