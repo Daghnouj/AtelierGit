@@ -3,6 +3,6 @@
 #ADD target/timesheet-devops-1.0.jar timesheet-devops-1.0.jar
 #ENTRYPOINT ["java","-jar","/timesheet-devops-1.0.jar"]
 FROM openjdk:17
-EXPOSE 8080
+EXPOSE 8086
 ADD	tn/esprit/spring/services/timesheet-devops/1.0/timesheet-devops-1.0.jar timesheet-devops-1.0.jar
 ENTRYPOINT ["java", "-jar", "timesheet-devops-1.0.jar"]
